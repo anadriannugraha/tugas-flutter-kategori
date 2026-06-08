@@ -14,6 +14,17 @@ Pastikan Anda sudah menginstal aplikasi berikut di komputer Anda:
 
 ---
 
+## 📥 Cara Mendapatkan Kode (Clone)
+1. Buka Terminal / CMD di komputer Anda.
+2. Arahkan ke folder tempat Anda ingin menyimpan proyek ini (misal: `cd Documents`).
+3. Jalankan perintah berikut untuk mengunduh proyek:
+   ```bash
+   git clone https://github.com/anadriannugraha/tugas-flutter-kategori.git
+   cd tugas-flutter-kategori
+   ```
+
+---
+
 ## 🚀 Cara Menjalankan Backend (PHP API)
 
 1. **Siapkan Database MySQL:**
