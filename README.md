@@ -47,6 +47,17 @@ Pastikan Anda sudah menginstal aplikasi berikut di komputer Anda:
 
 ---
 
+## 🌐 Cara Menjalankan Web Frontend (GudangZilla)
+
+1. Buka File Manager Anda, lalu arahkan ke folder `frontend`.
+2. Buka (Klik 2 kali) file `index.html` menggunakan browser (Google Chrome / Edge).
+3. Anda akan melihat halaman Login dengan tema Neo-Brutalism.
+4. Silakan gunakan akses berikut untuk login:
+   - **Username:** `admin`
+   - **Password:** `password123`
+
+---
+
 ## 📱 Cara Menjalankan Frontend (Flutter)
 
 1. **Buka Terminal Baru:**
