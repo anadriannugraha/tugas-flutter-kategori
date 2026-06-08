@@ -2,7 +2,7 @@
 
 Proyek ini terdiri dari dua bagian utama:
 1. **Backend (PHP Native):** Menyediakan REST API untuk autentikasi dan manajemen Kategori (CRUD).
-2. **Frontend (Flutter):** Aplikasi *mobile/web* dengan desain bergaya *Neo-Brutalism* dan struktur arsitektur MVC (Sesuai modul dosen).
+2. **Frontend (Flutter):** Aplikasi *mobile/web* dengan desain bergaya *Neo-Brutalism* dan struktur arsitektur MVC .
 
 ---
 
