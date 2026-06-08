@@ -73,8 +73,22 @@ Pastikan Anda sudah menginstal aplikasi berikut di komputer Anda:
 ├── models/             # Model API PHP
 ├── mobile_app/         # PROYEK FLUTTER
 │   ├── lib/
-│   │   ├── models/     # Model Data Flutter (kategori.dart, dll)
-│   │   ├── screens/    # Tampilan UI Flutter (Login, Kategori, Dashboard)
-│   │   ├── services/   # Koneksi ke API PHP (api_config.dart, dll)
-│   │   └── main.dart   # File utama navigasi aplikasi
+│   │   ├── models/
+│   │   ├── screens/
+│   │   │   ├── dashboard/
+│   │   │   │   ├── edit_profile.dart
+│   │   │   │   └── view_profile.dart
+│   │   │   ├── kategori/
+│   │   │   │   ├── add_kategori.dart
+│   │   │   │   ├── edit_kategori.dart
+│   │   │   │   ├── kategori_screen.dart
+│   │   │   │   └── list_kategori.dart
+│   │   │   └── login_screen.dart
+│   │   ├── services/
+│   │   │   ├── api_autentikasi.dart
+│   │   │   ├── api_berita.dart
+│   │   │   ├── api_config.dart
+│   │   │   ├── api_kategori.dart
+│   │   │   └── api_notes.dart
+│   │   └── main.dart
 ```
