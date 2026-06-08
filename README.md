@@ -117,6 +117,57 @@ Pastikan Anda sudah menginstal aplikasi berikut di komputer Anda:
 
 ---
 
+## ☁️ Deployment API ke Hosting Gratis (InfinityFree / free.nf)
+
+Jika Anda ingin agar API bisa diakses secara *online* dari HP manapun (tidak cuma di komputer lokal), Anda bisa meng-hosting-nya secara gratis di InfinityFree:
+1. Daftar dan buat akun di [InfinityFree](https://infinityfree.com/).
+2. Buat akun hosting baru (Create Account) dan pilih subdomain (misal: `api-gudangzilla.free.nf`).
+3. Buka **Control Panel** -> **MySQL Databases** dan buat database baru.
+4. *Import* file SQL Anda ke database tersebut melalui phpMyAdmin InfinityFree.
+5. Buka **Online File Manager** (masuk ke folder `htdocs`). Hapus file `index2.html` bawaan.
+6. *Upload* semua file dan folder PHP (seperti `controllers`, `models`, `config`, dan `index.php`) ke dalam folder `htdocs` tersebut.
+7. **Penting:** Ubah konfigurasi di `config/Database.php` agar sesuai dengan *credentials* database InfinityFree Anda (Host, Username, Password, dan Nama Database).
+8. Selesai! API Anda sekarang *live* di `http://api-gudangzilla.free.nf`.
+*(Catatan: Jangan lupa ubah URL `baseUrl` di file `api_config.dart` pada aplikasi Flutter Anda menjadi URL baru ini)*
+
+---
+
+## 🧪 Uji Coba API menggunakan Postman
+
+Anda bisa melakukan uji coba (*testing*) fungsionalitas CRUD menggunakan aplikasi **Postman**. Berikut adalah konfigurasi *URL endpoint* dan metode yang digunakan:
+
+**Base URL Lokal:** `http://localhost:8000` (Ganti dengan URL *hosting* Anda jika sudah di-*deploy*)
+
+1. **[GET] Tampil Semua Kategori**
+   - URL: `http://localhost:8000/kategori`
+   - Method: `GET`
+
+2. **[POST] Tambah Kategori Baru**
+   - URL: `http://localhost:8000/kategori`
+   - Method: `POST`
+   - Body (Pilih `raw` -> `JSON`):
+     ```json
+     {
+       "nama_kategori": "Teknologi Informasi"
+     }
+     ```
+
+3. **[PUT] Edit / Ubah Kategori**
+   - URL: `http://localhost:8000/kategori/{id}` *(Ganti {id} dengan angka ID kategori, misal: `/kategori/5`)*
+   - Method: `PUT`
+   - Body (Pilih `raw` -> `JSON`):
+     ```json
+     {
+       "nama_kategori": "Teknologi Terkini"
+     }
+     ```
+
+4. **[DELETE] Hapus Kategori**
+   - URL: `http://localhost:8000/kategori/{id}` *(Ganti {id} dengan angka ID kategori, misal: `/kategori/5`)*
+   - Method: `DELETE`
+
+---
+
 ## 📸 Tampilan Aplikasi
 
 | Screen Login | Screen Dashboard |
