@@ -1,23 +1,25 @@
-# Simple REST API & Flutter Neo-Brutalism App
+# 🚀 Simple REST API & Flutter Neo-Brutalism App
 
-Proyek ini terdiri dari dua bagian utama:
-1. **Backend (PHP Native):** Menyediakan REST API untuk autentikasi dan manajemen Kategori (CRUD).
-2. **Frontend (Flutter):** Aplikasi *mobile/web* dengan desain bergaya *Neo-Brutalism* dan struktur arsitektur MVC .
-
----
-
-## 🛠️ Persyaratan Sistem (Prerequisites)
-Pastikan Anda sudah menginstal aplikasi berikut di komputer Anda:
-- **XAMPP / Laragon** (Untuk MySQL Database dan PHP)
-- **Flutter SDK** (Untuk menjalankan aplikasi frontend)
-- **Git** (Opsional, untuk *version control*)
+Halo! Selamat datang di proyek **GudangZilla**! 🦖 
+Proyek ini seru banget karena dibagi jadi dua bagian utama:
+1. **Backend (PHP Native):** Si mesin di balik layar yang nyediain REST API buat urusan login dan atur data Kategori (CRUD).
+2. **Frontend (Flutter):** Aplikasi *mobile/web* yang desainnya pakai gaya *Neo-Brutalism* yang lagi hype banget. Oh ya, strukturnya juga udah pakai MVC biar rapi!
 
 ---
 
-## 📥 Cara Mendapatkan Kode (Clone)
-1. Buka Terminal / CMD di komputer Anda.
-2. Arahkan ke folder tempat Anda ingin menyimpan proyek ini (misal: `cd Documents`).
-3. Jalankan perintah berikut untuk mengunduh proyek:
+## 🛠️ Persiapan (Prerequisites)
+Sebelum mulai ngoding atau nyobain, pastiin kamu udah punya amunisi ini di laptopmu:
+- **XAMPP / Laragon** (Biar bisa nyalain MySQL Database dan PHP)
+- **Flutter SDK** (Buat nge-jalanin aplikasi frontend-nya)
+- **Git** (Opsional sih, tapi bagus buat *version control*)
+
+---
+
+## 📥 Cara Dapetin Kodenya (Clone)
+Pengen langsung nyobain? Gini cara *download* kodenya:
+1. Buka Terminal / CMD di laptop kamu.
+2. Pindah ke folder tempat kamu mau nyimpen proyek ini (contoh: `cd Documents`).
+3. Ketik perintah ajaib ini buat nge-clone proyeknya:
    ```bash
    git clone https://github.com/anadriannugraha/tugas-flutter-kategori.git
    cd tugas-flutter-kategori
@@ -25,75 +27,78 @@ Pastikan Anda sudah menginstal aplikasi berikut di komputer Anda:
 
 ---
 
-## 🚀 Cara Menjalankan Backend (PHP API)
+## 🚀 Cara Nyalain Backend (PHP API)
 
-1. **Siapkan Database MySQL:**
-   - Buka XAMPP/Laragon dan jalankan **MySQL**.
-   - Buka phpMyAdmin (biasanya di `http://localhost/phpmyadmin`).
-   - Buat database baru (misalnya `simple_api` atau sesuai yang ada di file `config/Database.php`).
-   - *Import* tabel yang dibutuhkan atau jalankan skrip SQL yang ada di folder `database/` (jika ada).
+1. **Siapin Database MySQL-nya:**
+   - Buka XAMPP/Laragon, terus *start* **MySQL**.
+   - Buka phpMyAdmin di browser (biasanya `http://localhost/phpmyadmin`).
+   - Bikin database baru (misal namanya `simple_api`, atau sesuaikan sama file `config/Database.php`).
+   - *Import* tabelnya dari skrip SQL yang ada di folder `database/` (kalo ada).
 
-2. **Jalankan Server PHP:**
-   - Buka Terminal / Command Prompt (CMD).
-   - Arahkan ke folder utama proyek ini:
+2. **Jalanin Server PHP:**
+   - Buka Terminal / CMD.
+   - Masuk ke folder utama proyek ini:
      ```bash
      cd path/ke/folder/proyek/ini
      ```
-   - Jalankan perintah *built-in server* PHP di port 8000:
+   - Jalanin server lokal PHP di port 8000:
      ```bash
      php -S localhost:8000
      ```
-   - **PENTING:** Biarkan terminal ini tetap terbuka! Backend API Anda sekarang berjalan di `http://localhost:8000`.
+   - **PENTING BANGET:** Jangan di-close ya terminalnya! Biarin aja kebuka biar API kamu tetap jalan di `http://localhost:8000`.
 
 ---
 
-## 🌐 Cara Menjalankan Web Frontend (GudangZilla)
+## 🌐 Cara Buka Web Frontend (GudangZilla)
 
-1. Buka File Manager Anda, lalu arahkan ke folder `frontend`.
-2. Buka (Klik 2 kali) file `index.html` menggunakan browser (Google Chrome / Edge).
-3. Anda akan melihat halaman Login dengan tema Neo-Brutalism.
-4. Silakan gunakan akses berikut untuk login:
+Kalo kamu mau liat versi website-nya, gampang banget:
+1. Buka File Manager, terus masuk ke folder `frontend`.
+2. Buka (klik 2x) file `index.html` pakai browser andalanmu (Chrome / Edge).
+3. Nanti bakal muncul halaman Login kartun bergaya Neo-Brutalism.
+4. Buat masuk, pake akun ini aja:
    - **Username:** `admin`
    - **Password:** `password123`
 
 ---
 
-## 📱 Cara Menjalankan Frontend (Flutter)
+## 📱 Cara Jalanin Frontend (Flutter)
 
 1. **Buka Terminal Baru:**
-   - Buka terminal / CMD baru (jangan tutup terminal PHP tadi).
-   - Arahkan ke folder `mobile_app`:
+   - Buka terminal / CMD baru (ingat, terminal PHP yang tadi jangan ditutup ya).
+   - Masuk ke folder `mobile_app`:
      ```bash
      cd path/ke/folder/proyek/ini/mobile_app
      ```
 
-2. **Instal Dependensi (Package):**
-   - Jalankan perintah berikut untuk mengunduh semua package yang dibutuhkan (seperti `http`):
+2. **Download Package-nya:**
+   - Biar Flutter-nya jalan lancar, kita *download* dulu semua kebutuhannya (kaya `http`):
      ```bash
      flutter pub get
      ```
 
-3. **Jalankan Aplikasi:**
-   - Untuk menjalankan aplikasi di browser (Google Chrome), ketik:
+3. **Gaskeun Aplikasinya:**
+   - Kalo mau jalanin aplikasinya di browser (Google Chrome), tinggal ketik:
      ```bash
      flutter run -d chrome
      ```
-   - Tunggu proses *build* selesai. Aplikasi akan otomatis terbuka di browser Anda.
+   - Tunggu proses *build*-nya bentar. Nanti aplikasinya bakal otomatis kebuka di browser kamu.
    
 4. **Login:**
+   - Nah, buat login di aplikasi Flutter-nya, pake akun ini:
    - Email: `15230869@bsi.ac.id`
    - Password: `21-07-2004`
 
 ---
 
-## 📂 Struktur Proyek Utama
+## 📂 Ngintip Struktur Proyeknya
+Biar nggak bingung, ini dia isi jeroan proyek kita:
 ```text
 /
-├── config/             # Konfigurasi Database PHP
-├── controllers/        # Logika API PHP
-├── database/           # Skrip backup/migrasi DB
-├── models/             # Model API PHP
-├── mobile_app/         # PROYEK FLUTTER
+├── config/             # Settingan Database PHP
+├── controllers/        # Otak dari API PHP-nya
+├── database/           # Buat naruh backup/migrasi DB
+├── models/             # Kerangka data API PHP
+├── mobile_app/         # INI PROYEK FLUTTER-NYA
 │   ├── lib/
 │   │   ├── models/
 │   │   ├── screens/
@@ -117,32 +122,32 @@ Pastikan Anda sudah menginstal aplikasi berikut di komputer Anda:
 
 ---
 
-## ☁️ Deployment API ke Hosting Gratis (InfinityFree / free.nf)
+## ☁️ Mau Deploy API ke Hosting Gratis? (InfinityFree / free.nf)
 
-Jika Anda ingin agar API bisa diakses secara *online* dari HP manapun (tidak cuma di komputer lokal), Anda bisa meng-hosting-nya secara gratis di InfinityFree:
-1. Daftar dan buat akun di [InfinityFree](https://infinityfree.com/).
-2. Buat akun hosting baru (Create Account) dan pilih subdomain (misal: `api-gudangzilla.free.nf`).
-3. Buka **Control Panel** -> **MySQL Databases** dan buat database baru.
-4. *Import* file SQL Anda ke database tersebut melalui phpMyAdmin InfinityFree.
-5. Buka **Online File Manager** (masuk ke folder `htdocs`). Hapus file `index2.html` bawaan.
-6. *Upload* semua file dan folder PHP (seperti `controllers`, `models`, `config`, dan `index.php`) ke dalam folder `htdocs` tersebut.
-7. **Penting:** Ubah konfigurasi di `config/Database.php` agar sesuai dengan *credentials* database InfinityFree Anda (Host, Username, Password, dan Nama Database).
-8. Selesai! API Anda sekarang *live* di `http://api-gudangzilla.free.nf`.
-*(Catatan: Jangan lupa ubah URL `baseUrl` di file `api_config.dart` pada aplikasi Flutter Anda menjadi URL baru ini)*
+Kalo kamu pengen API-nya bisa diakses dari HP beneran (nggak cuma di laptop doang), kamu bisa *hosting* gratis di InfinityFree. Gini caranya:
+1. Bikin akun dulu di [InfinityFree](https://infinityfree.com/).
+2. Buat akun hosting baru (*Create Account*) dan pilih subdomain yang keren (misal: `api-gudangzilla.free.nf`).
+3. Buka **Control Panel** -> **MySQL Databases**, terus bikin database baru.
+4. *Import* file SQL kamu ke database itu lewat phpMyAdmin-nya InfinityFree.
+5. Masuk ke **Online File Manager** (buka folder `htdocs`). Ada file `index2.html` bawaan? Hapus aja.
+6. *Upload* semua file dan folder PHP (kaya `controllers`, `models`, `config`, dan `index.php`) ke dalam folder `htdocs` tadi.
+7. **Penting:** Buka `config/Database.php` terus ganti isinya (Host, Username, Password, DB Name) sesuai sama info database InfinityFree kamu.
+8. Voila! API kamu sekarang udah *live* di `http://api-gudangzilla.free.nf`.
+*(Psst.. Jangan lupa ganti URL `baseUrl` di file `api_config.dart` pada aplikasi Flutter kamu pake URL yang baru ini ya!)*
 
 ---
 
-## 🧪 Uji Coba API menggunakan Postman
+## 🧪 Tes API Pake Postman
 
-Anda bisa melakukan uji coba (*testing*) fungsionalitas CRUD menggunakan aplikasi **Postman**. Berikut adalah konfigurasi *URL endpoint* dan metode yang digunakan:
+Kalo kamu mau ngetes apakah fitur CRUD-nya jalan atau nggak, kamu bisa main-main pakai **Postman**. Ini contekan URL dan Method-nya:
 
-**Base URL Lokal:** `http://localhost:8000` (Ganti dengan URL *hosting* Anda jika sudah di-*deploy*)
+**Base URL Lokal:** `http://localhost:8000` *(Tinggal ganti aja pake URL hosting kamu kalo udah di-deploy)*
 
-1. **[GET] Tampil Semua Kategori**
+1. **[GET] Liat Semua Kategori**
    - URL: `http://localhost:8000/kategori`
    - Method: `GET`
 
-2. **[POST] Tambah Kategori Baru**
+2. **[POST] Nambah Kategori Baru**
    - URL: `http://localhost:8000/kategori`
    - Method: `POST`
    - Body (Pilih `raw` -> `JSON`):
@@ -152,8 +157,8 @@ Anda bisa melakukan uji coba (*testing*) fungsionalitas CRUD menggunakan aplikas
      }
      ```
 
-3. **[PUT] Edit / Ubah Kategori**
-   - URL: `http://localhost:8000/kategori/{id}` *(Ganti {id} dengan angka ID kategori, misal: `/kategori/5`)*
+3. **[PUT] Ngedit Kategori**
+   - URL: `http://localhost:8000/kategori/{id}` *(Contoh: `/kategori/5`)*
    - Method: `PUT`
    - Body (Pilih `raw` -> `JSON`):
      ```json
@@ -163,19 +168,19 @@ Anda bisa melakukan uji coba (*testing*) fungsionalitas CRUD menggunakan aplikas
      ```
 
 4. **[DELETE] Hapus Kategori**
-   - URL: `http://localhost:8000/kategori/{id}` *(Ganti {id} dengan angka ID kategori, misal: `/kategori/5`)*
+   - URL: `http://localhost:8000/kategori/{id}` *(Contoh: `/kategori/5`)*
    - Method: `DELETE`
 
 ---
 
-## 📸 Tampilan Aplikasi
+## 📸 Kayak Gini Nih Penampakannya
 
-| Screen Login | Screen Dashboard |
+| Login Dulu Yuk | Dashboard Admin |
 | :---: | :---: |
 | <img src="mobile_app/assets/Login%20pages.png" width="250"> | <img src="mobile_app/assets/dashoard%20admin.png" width="250"> |
 
-| Screen Kategori | Screen Add Kategori |
+| Daftar Kategori | Tambah Kategori Baru |
 | :---: | :---: |
 | <img src="mobile_app/assets/Kategori%20screen.png" width="250"> | <img src="mobile_app/assets/Tambah%20kategori.png" width="250"> |
 
-*(Screenshot lainnya seperti Halaman Notes juga tersedia di folder `mobile_app/assets`)*
+*(Mau liat screenshot lain kayak Halaman Notes? Cek aja di folder `mobile_app/assets`)*
