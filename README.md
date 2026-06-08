@@ -103,3 +103,17 @@ Pastikan Anda sudah menginstal aplikasi berikut di komputer Anda:
 │   │   │   └── api_notes.dart
 │   │   └── main.dart
 ```
+
+---
+
+## 📸 Tampilan Aplikasi
+
+| Screen Login | Screen Dashboard |
+| :---: | :---: |
+| <img src="mobile_app/assets/Login%20pages.png" width="250"> | <img src="mobile_app/assets/dashoard%20admin.png" width="250"> |
+
+| Screen Kategori | Screen Add Kategori |
+| :---: | :---: |
+| <img src="mobile_app/assets/Kategori%20screen.png" width="250"> | <img src="mobile_app/assets/Tambah%20kategori.png" width="250"> |
+
+*(Screenshot lainnya seperti Halaman Notes juga tersedia di folder `mobile_app/assets`)*
