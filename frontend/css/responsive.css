@@ -1,0 +1,248 @@
+/**
+ * GudangZilla — responsive UI shared across all pages
+ * Mobile-first, safe-area aware, touch-friendly
+ */
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body.gz-responsive {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/* ── Breakpoint helpers (set by device.js) ── */
+body.device-mobile .hide-mobile { display: none !important; }
+body.device-tablet .hide-tablet { display: none !important; }
+body.device-desktop .hide-desktop { display: none !important; }
+body.device-mobile .show-mobile-only { display: block !important; }
+body.device-mobile .show-mobile-flex { display: flex !important; }
+
+/* ── Touch-friendly controls ── */
+body.touch-device .btn,
+body.touch-device .nav-item,
+body.touch-device .bnav-item,
+body.touch-device .pill,
+body.touch-device .btn-icon {
+    min-height: 44px;
+}
+
+/* Prevent iOS zoom on focus */
+@media (max-width: 767px) {
+    input,
+    select,
+    textarea,
+    .form-control {
+        font-size: 16px !important;
+    }
+}
+
+/* ── Fluid typography ── */
+.gz-title {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    line-height: 1.2;
+}
+
+.gz-subtitle {
+    font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+}
+
+/* ── Responsive grid ── */
+.gz-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 480px) {
+    .gz-grid.gz-grid-2-sm {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .gz-grid.gz-grid-auto {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+    .gz-grid.gz-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gz-grid.gz-grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ── Stack toolbars on small screens ── */
+.gz-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+@media (max-width: 767px) {
+    .gz-toolbar.gz-stack {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .gz-toolbar.gz-stack .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ── Horizontal scroll tables (desktop-style pages) ── */
+.gz-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+}
+
+@media (max-width: 767px) {
+    .gz-table-wrap table {
+        min-width: 640px;
+    }
+}
+
+/* ── Modal: bottom sheet on phone ── */
+body.device-mobile .gz-modal-host .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+}
+
+body.device-mobile .gz-modal-host .modal-box {
+    width: 100%;
+    max-width: 100%;
+    max-height: min(92vh, 92dvh);
+    border-radius: 20px 20px 0 0;
+    margin: 0;
+    transform: translateY(100%);
+}
+
+body.device-mobile .gz-modal-host .modal-overlay.active .modal-box {
+    transform: translateY(0);
+}
+
+body.device-mobile .gz-modal-host .modal-footer {
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+}
+
+body.device-mobile #scanModal .modal-box {
+    max-height: 100dvh;
+    border-radius: 0;
+    height: 100%;
+}
+
+/* ── Bottom navigation safe area ── */
+body.device-mobile .bottom-nav {
+    height: calc(66px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (max-width: 380px) {
+    body.device-mobile .bnav-item span {
+        font-size: 0.6rem;
+    }
+    body.device-mobile .bnav-item i {
+        font-size: 1.1rem;
+    }
+}
+
+/* ── Bottom nav: center action stays aligned when swiping ── */
+body.device-mobile .bottom-nav {
+    align-items: flex-end;
+}
+
+body.device-mobile .bnav-center-wrap {
+    flex: 1.15;
+    max-width: 76px;
+}
+
+body.device-mobile #bnav-keluar span {
+    color: #ffb4b4;
+}
+
+body.device-mobile .dot-indicator {
+    display: none !important;
+}
+
+/* ── Login page ── */
+body.gz-login {
+    padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+        max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
+
+@media (max-width: 767px) {
+    body.gz-login .login-wrapper {
+        flex-direction: column;
+        width: 100%;
+        max-width: 420px;
+        gap: 24px;
+    }
+    body.gz-login .login-card {
+        padding: 28px 20px;
+    }
+    body.gz-login .logo-container h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 360px) {
+    body.gz-login .login-card {
+        padding: 24px 16px;
+    }
+}
+
+/* ── Landscape phone ── */
+@media (max-height: 500px) and (orientation: landscape) {
+    body.device-mobile .header {
+        padding: 8px 16px;
+    }
+    body.device-mobile .page-section {
+        padding-bottom: 80px;
+    }
+    body.device-mobile .modal-box {
+        max-height: 95vh;
+    }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ── Dark glass dashboard (style.css pages) ── */
+@media (max-width: 767px) {
+    body.gz-glass .dashboard-layout {
+        flex-direction: column;
+    }
+    body.gz-glass .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+        padding: 16px;
+    }
+    body.gz-glass .main-content {
+        padding: 16px;
+    }
+    body.gz-glass .content-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    body.gz-glass .content-header .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

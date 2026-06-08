@@ -1,0 +1,3 @@
+class ApiBerita {
+  // Dummy class
+}

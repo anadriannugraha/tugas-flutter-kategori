@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#2D6BE4">
+    <title>Login - GudangZilla</title>
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Neobrutalism Mode (Default Light) */
+            --bg-base: #FEFAE0;
+            --bg-grid: #d4d0b8;
+            --bg-card: #FFFFFF;
+            --cobalt: #2D6BE4;
+            --yellow: #FFD93D;
+            --coral: #FF6B6B;
+            --mint: #6BCB77;
+            --black: #000000;
+            --text-main: #000000;
+            --text-muted: #666666;
+            --border-thick: 3px solid var(--black);
+            --shadow-cartoon: 6px 6px 0px var(--black);
+            --radius-large: 24px;
+            --glass-blur: blur(0px);
+            --glass-border: var(--border-thick);
+        }
+
+        /* Dark Mode: Cyber-Glass Theme */
+        body.dark-mode {
+            --bg-base: #0f172a;
+            --bg-grid: #1e293b;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --cobalt: #6366f1;
+            --yellow: #f59e0b;
+            --coral: #ef4444;
+            --mint: #10b981;
+            --black: #ffffff;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-thick: 2px solid rgba(255, 255, 255, 0.15);
+            --shadow-cartoon: 0px 8px 32px rgba(99, 102, 241, 0.25);
+            --radius-large: 24px;
+            --glass-blur: blur(12px);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-base);
+            background-image: radial-gradient(var(--bg-grid) 2px, transparent 2px);
+            background-size: 24px 24px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        h1, h2, .fredoka {
+            font-family: 'Fredoka One', cursive;
+            letter-spacing: 0.5px;
+        }
+
+        /* Settings / Theme Toggle Button */
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--yellow);
+            border: var(--border-thick);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 3px 3px 0 var(--black);
+            z-index: 10;
+        }
+
+        .theme-toggle-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0 var(--black);
+        }
+
+        .login-wrapper {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            justify-content: center;
+            max-width: 900px;
+            width: min(100%, 420px);
+            padding: 0 16px;
+        }
+
+        @media (min-width: 768px) {
+            .login-wrapper {
+                width: 90%;
+                max-width: 900px;
+            }
+        }
+
+        .login-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: var(--glass-border);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow-cartoon);
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            justify-content: center;
+        }
+
+        .logo-svg {
+            width: 48px;
+            height: 48px;
+            filter: drop-shadow(3px 3px 0px var(--black));
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.1rem;
+        }
+
+        .form-control {
+            background: var(--bg-base);
+            border: var(--border-thick);
+            border-radius: 12px;
+            padding: 14px 16px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--text-main);
+            outline: none;
+            box-shadow: inset 3px 3px 0px rgba(0,0,0,0.05);
+        }
+
+        .form-control:focus {
+            box-shadow: 4px 4px 0px var(--cobalt);
+        }
+
+        .btn {
+            background: var(--yellow);
+            border: var(--border-thick);
+            border-radius: 16px;
+            padding: 14px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.2rem;
+            color: #000;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px var(--black);
+            transition: transform 0.1s, box-shadow 0.1s;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px var(--black);
+        }
+
+        .mascot-big {
+            flex: 1;
+            display: none;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .mascot-big {
+                display: block;
+                animation: float 3s ease-in-out infinite;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        .speech-bubble {
+            background: var(--bg-card);
+            border: var(--glass-border);
+            padding: 16px 24px;
+            border-radius: 24px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-cartoon);
+            position: relative;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            margin-left: -10px;
+            width: 20px;
+            height: 20px;
+            background: var(--bg-card);
+            border-bottom: var(--border-thick);
+            border-right: var(--border-thick);
+            transform: rotate(45deg);
+        }
+
+        /* Shake animation for wrong credentials */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-10px) rotate(-3deg); }
+            40% { transform: translateX(10px) rotate(3deg); }
+            60% { transform: translateX(-10px) rotate(-3deg); }
+            80% { transform: translateX(10px) rotate(3deg); }
+        }
+        .shake { animation: shake 0.4s ease-in-out; }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%, -150%);
+            background: var(--coral);
+            color: white;
+            border: var(--border-thick);
+            padding: 12px 24px;
+            border-radius: 16px;
+            box-shadow: 4px 4px 0 var(--black);
+            font-family: 'Fredoka One', cursive;
+            z-index: 9999;
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toast.show { transform: translate(-50%, 0); }
+    </style>
+</head>
+<body class="gz-responsive gz-login">
+
+    <div id="toast" class="toast">
+        <i class="fa-solid fa-triangle-exclamation"></i> <span id="toastMsg">Login Gagal</span>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle-btn" id="themeBtn" aria-label="Toggle Theme" title="Ubah Tema">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <div class="login-wrapper">
+        <!-- Big Mascot Side -->
+        <div class="mascot-big">
+            <div class="speech-bubble" id="greetingBubble">
+                Halooo!<br>Waktunya kerja nih! 🚀
+            </div>
+            <br>
+            <svg viewBox="0 0 100 100" style="width: 250px; height: 250px; filter: drop-shadow(6px 6px 0px var(--black));">
+                <!-- Legs -->
+                <rect x="35" y="80" width="10" height="20" fill="var(--cobalt)" stroke="var(--black)" stroke-width="4"/>
+                <rect x="55" y="80" width="10" height="20" fill="var(--cobalt)" stroke="var(--black)" stroke-width="4"/>
+                
+                <!-- Body Box -->
+                <rect x="15" y="20" width="70" height="60" rx="8" fill="var(--yellow)" stroke="var(--black)" stroke-width="4"/>
+                <path d="M15 35 L85 35" stroke="var(--black)" stroke-width="4"/>
+                
+                <!-- Right Arm Waving -->
+                <path d="M 85 50 Q 105 30 90 20" fill="none" stroke="var(--black)" stroke-width="10" stroke-linecap="round"/>
+                <path d="M 85 50 Q 105 30 90 20" fill="none" stroke="var(--yellow)" stroke-width="6" stroke-linecap="round"/>
+                
+                <!-- Left Arm -->
+                <path d="M 15 50 Q 0 60 10 70" fill="none" stroke="var(--black)" stroke-width="10" stroke-linecap="round"/>
+                <path d="M 15 50 Q 0 60 10 70" fill="none" stroke="var(--yellow)" stroke-width="6" stroke-linecap="round"/>
+                
+                <!-- Eyes -->
+                <circle cx="35" cy="55" r="6" fill="var(--black)"/>
+                <circle cx="65" cy="55" r="6" fill="var(--black)"/>
+                <!-- Eye Highlights -->
+                <circle cx="33" cy="53" r="2" fill="#fff"/>
+                <circle cx="63" cy="53" r="2" fill="#fff"/>
+                
+                <!-- Smile -->
+                <path d="M 45 65 Q 50 75 55 65" fill="none" stroke="var(--black)" stroke-width="4" stroke-linecap="round"/>
+                
+                <!-- Top Flaps -->
+                <path d="M 30 20 L 50 5 L 70 20" fill="none" stroke="var(--black)" stroke-width="4" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <!-- Login Card -->
+        <div class="login-card">
+            <div class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100">
+                    <rect x="10" y="20" width="80" height="70" rx="10" fill="var(--yellow)" stroke="var(--black)" stroke-width="6"/>
+                    <path d="M10 40 L90 40" stroke="var(--black)" stroke-width="6"/>
+                    <circle cx="35" cy="65" r="8" fill="var(--black)"/>
+                    <circle cx="65" cy="65" r="8" fill="var(--black)"/>
+                    <path d="M 45 75 Q 50 85 55 75" fill="none" stroke="var(--black)" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M 30 20 L 50 5 L 70 20" fill="none" stroke="var(--black)" stroke-width="6" stroke-linejoin="round"/>
+                </svg>
+                <h2 style="font-size: 2.5rem; color: var(--cobalt);">GudangZilla</h2>
+            </div>
+
+            <p style="text-align: center; font-weight: 800; color: var(--text-muted); margin-bottom: 24px;">
+                Masuk dulu yuk buat kelola stok barang! 📦
+            </p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Username / Email</label>
+                    <input type="text" id="username" class="form-control" placeholder="admin atau adrian@bsi.ac.id" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn">
+                    Login Masuk! <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/device.js"></script>
+    <script>
+        // Set dynamic greetings
+        const now = new Date();
+        const hrs = now.getHours();
+        const bubble = document.getElementById('greetingBubble');
+        if (hrs < 12) bubble.innerHTML = "Selamat Pagi!<br>Yuk, mulai kelola stok! 🌅";
+        else if (hrs < 17) bubble.innerHTML = "Selamat Siang!<br>Semangat kerjanya ngab! 🚀";
+        else bubble.innerHTML = "Selamat Malam!<br>Gudang sudah aman belum? 🌃";
+
+        // Audio pop
+        const playPop = () => { try{ const ctx = new (window.AudioContext || window.webkitAudioContext)(); const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.connect(gain); gain.connect(ctx.destination); osc.type='sine'; osc.frequency.setValueAtTime(600, ctx.currentTime); osc.frequency.exponentialRampToValueAtTime(800, ctx.currentTime+0.1); gain.gain.setValueAtTime(0.3, ctx.currentTime); gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime+0.1); osc.start(ctx.currentTime); osc.stop(ctx.currentTime+0.1); }catch(e){} };
+
+        // Toast error handling
+        const showToast = (msg) => {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        };
+
+        // Theme Toggle Handler
+        const themeBtn = document.getElementById('themeBtn');
+        const themeIcon = themeBtn.querySelector('i');
+        
+        // Load saved theme
+        if (localStorage.getItem('gz_theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeIcon.className = 'fa-solid fa-sun';
+        }
+
+        themeBtn.addEventListener('click', () => {
+            playPop();
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+                themeIcon.className = 'fa-solid fa-moon';
+                localStorage.setItem('gz_theme', 'light');
+            } else {
+                document.body.classList.add('dark-mode');
+                themeIcon.className = 'fa-solid fa-sun';
+                localStorage.setItem('gz_theme', 'dark');
+            }
+        });
+
+        // Form Submit with Real API integration
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            playPop();
+
+            const btn = document.querySelector('.btn');
+            const originalBtn = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Memeriksa...';
+            btn.disabled = true;
+
+            const identifier = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+
+            const payload = {};
+            if (identifier.includes('@')) {
+                payload.email = identifier;
+            } else {
+                payload.username = identifier;
+            }
+            payload.password = password;
+
+            try {
+                const response = await fetch('../login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.status === 'success') {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Sukses! Masuk...';
+                    localStorage.setItem('gz_session', JSON.stringify({
+                        identifier: result.data.identifier,
+                        token: result.data.token
+                    }));
+                    setTimeout(() => {
+                        window.location.href = 'dashboard.html';
+                    }, 800);
+                } else {
+                    throw new Error(result.message || 'Username atau password salah.');
+                }
+            } catch (err) {
+                // Shake card animation
+                const card = document.querySelector('.login-card');
+                card.classList.remove('shake');
+                void card.offsetWidth; // Reflow
+                card.classList.add('shake');
+
+                showToast(err.message);
+                btn.innerHTML = originalBtn;
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

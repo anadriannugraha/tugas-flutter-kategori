@@ -1,0 +1,3 @@
+class ApiNotes {
+  // Dummy class
+}
