@@ -26,7 +26,7 @@ Pastikan Anda sudah menginstal aplikasi berikut di komputer Anda:
    - Buka Terminal / Command Prompt (CMD).
    - Arahkan ke folder utama proyek ini:
      ```bash
-     cd C:\Users\hp_ae\Downloads\simple-rest-api-main\simple-rest-api-main
+     cd path/ke/folder/proyek/ini
      ```
    - Jalankan perintah *built-in server* PHP di port 8000:
      ```bash
@@ -42,7 +42,7 @@ Pastikan Anda sudah menginstal aplikasi berikut di komputer Anda:
    - Buka terminal / CMD baru (jangan tutup terminal PHP tadi).
    - Arahkan ke folder `mobile_app`:
      ```bash
-     cd C:\Users\hp_ae\Downloads\simple-rest-api-main\simple-rest-api-main\mobile_app
+     cd path/ke/folder/proyek/ini/mobile_app
      ```
 
 2. **Instal Dependensi (Package):**
