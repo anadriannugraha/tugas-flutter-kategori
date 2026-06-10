@@ -27,7 +27,7 @@ class Database {
             $password = 'dYQxArGykqF5s';
         } else {
             // Localhost Configuration
-            $host     = 'localhost';
+            $host     = '127.0.0.1';
             $dbname   = 'mydb';
             $username = 'root';
             $password = '';
